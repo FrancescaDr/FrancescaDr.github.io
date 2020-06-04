@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Launching Hugo website on Github // Francesca Drummer</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    
+    
+
+        <meta property="og:title" content="Launching Hugo website on Github" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:url" content="https://FrancescaDr.github.io/posts/launchingwebsite/" />
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link href="https://FrancescaDr.github.io/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://FrancescaDr.github.io/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://FrancescaDr.github.io/css/style.css">
+    
+
+    <meta name="generator" content="Hugo 0.65.3" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="https://FrancescaDr.github.io/">Francesca Drummer</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/categories/">Categories</a>
+                
+                <a class="main-nav-link" href="/links/">Links</a>
+                
+                <a class="main-nav-link" href="/tags/">Tags</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Launching Hugo website on Github</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/posts/launchingwebsite/" class="article-date">
+                <time datetime='2020-06-04T00:00:00.000&#43;00:00' itemprop="datePublished">2020-06-04</time>
+            </a>
+            
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>Publishing a website often requires you to buy a domain name first. A domain name is like having a real estate online. For example, if you bought the domain &ldquo;yourwebsite.com&rdquo; you have complete control of what is being published on that domain and its corresponding &lsquo;sub&rsquo;-URLs, such as &ldquo;yourwebsite.com/about&rdquo;. Even though most domain names are not very expensive it can be a bit intimidating to buy one. However, there are alternatives! GitHub does offer a service that allows you to publish a website without needing to buy a domain name, namely via <a href="https://pages.github.com">GitHub Pages</a>. GitHub Pages is a static web hosting service which provides 1GB of free space. The only requirement you have to fulfil is having a GitHub account. Another nice feature is that GitHub pages also allows you to publish a website without needing to use or know HTML because you can use a built-in theme alternatively to HTML code. However, if you want to use your own HTML rendered website than that is also possible.</p>
+<p>I created my website with the help of a Hugo template (the &ldquo;<a href="https://themes.gohugo.io/hugo-theme-minos/">Hugo Theme Minos</a>&quot;) and therefore, I launched it on GitHub without using a GitHub theme with the following steps:</p>
+<h1 id="launching-your-website-for-the-first-time">Launching your website for the first time</h1>
+<ol>
+<li>Modify the base URL link in the &ldquo;config.toml&rdquo; file within your website folder to:</li>
+</ol>
+<pre><code>baseURL = &quot;https://&lt;YOUR-USER-NAME&gt;.github.io/&quot;
+</code></pre><ol start="2">
+<li>Create git repository <!-- raw HTML omitted -->.github.io. This repository is initially emtpy but will later contain the content for your static rendered website.</li>
+<li>Build your website by running the following command at your website folder:</li>
+</ol>
+<pre><code>hugo
+</code></pre><p>This command builds your website in a <code>public</code> folder that is located inside your website folder. Within the <code>public</code> folder there is a <code>index.html</code> file which is required by GitHub to create a website.</p>
+<p>If you want to check the layout and content of your website first you should run:</p>
+<pre><code>hugo server
+</code></pre><p>This enables you to access your website via <a href="http://localhost:1313">http://localhost:1313</a>. Don&rsquo;t forget to close the hugo server before creating your <code>public</code> folder.</p>
+<ol start="4">
+<li>Go to your <code>public</code> folder which contains webfiles, such as HTML, css,&hellip;, that can generate your static website.</li>
+<li>Run the following commands to add you public folder to your <code>&lt;USERNAME&gt;.github.io</code> repository.</li>
+</ol>
+<pre><code>cd public
+git init
+git add .
+git remote add origin https://github.com/username/username.github.io.git
+git commit -m “first commit”
+git push origin master
+</code></pre><p>The first command changes reference directories to your public folder. If you already opened a Terminal at the public folder then you can leave this command out. After running this command you should see that your content has been added to your git repository at &lsquo;<a href="https://github.com/username/username.github.io.git'">https://github.com/username/username.github.io.git'</a>.</p>
+<ol start="6">
+<li>In setting you should now see a green box which informs you that your website has been published under the domain &lsquo;https://<!-- raw HTML omitted -->.github.io/'.</li>
+</ol>
+<p>If you need further guidance check out this <a href="https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7">post</a>.</p>
+<h1 id="updating-your-content">Updating your content</h1>
+<p>After having launched the website new content can be updated by simply commiting it to the GitHub repository, like you would do for any other Git project.</p>
+<ol>
+<li>First, you need to update the <code>public</code> folder by running the <code>hugo</code> command in the command line of your main website folder.</li>
+<li>Add the new content to Git, commit it and push to your git repository by running the following commands:</li>
+</ol>
+<pre><code>cd public
+git add
+git commit -m &quot;YOUR-COMMIT-MESSAGE&quot;
+git push -u origin master
+</code></pre>
+        </div>
+
+        
+        
+        <div class="article-toc" style="display:none;">
+            <h3>Contents</h3>
+            <nav id="TableOfContents"></nav>
+        </div>
+        
+        
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+        <script>
+            (function() {
+                var $toc = $('#TableOfContents');
+                if ($toc.length > 0) {
+                    var $window = $(window);
+
+                    function onScroll(){
+                        var currentScroll = $window.scrollTop();
+                        var h = $('.article-entry h1, .article-entry h2, .article-entry h3, .article-entry h4, .article-entry h5, .article-entry h6');
+                        var id = "";
+                        h.each(function (i, e) {
+                            e = $(e);
+                            if (e.offset().top - 10 <= currentScroll) {
+                                id = e.attr('id');
+                            }
+                        });
+                        var active = $toc.find('a.active');
+                        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+                        active.each(function (i, e) {
+                            $(e).removeClass('active').siblings('ul').hide();
+                        });
+                        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                            $(e).children('a').addClass('active').siblings('ul').show();
+                        });
+                    }
+
+                    $window.on('scroll', onScroll);
+                    $(document).ready(function() {
+                        $toc.find('a').parent('li').find('ul').hide();
+                        onScroll();
+                        document.getElementsByClassName('article-toc')[0].style.display = '';
+                    });
+                }
+            })();
+        </script>
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://FrancescaDr.github.io//tags/git">git
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://FrancescaDr.github.io//tags/website">website
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    
+    <a href="/about/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2020 Francesca Drummer
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

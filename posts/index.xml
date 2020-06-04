@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Francesca Drummer</title>
+    <link>https://FrancescaDr.github.io/posts/</link>
+    <description>Recent content in Posts on Francesca Drummer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://FrancescaDr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Launching Hugo website on Github</title>
+      <link>https://FrancescaDr.github.io/posts/launchingwebsite/</link>
+      <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://FrancescaDr.github.io/posts/launchingwebsite/</guid>
+      <description>Publishing a website often requires you to buy a domain name first. A domain name is like having a real estate online. For example, if you bought the domain &amp;ldquo;yourwebsite.com&amp;rdquo; you have complete control of what is being published on that domain and its corresponding &amp;lsquo;sub&amp;rsquo;-URLs, such as &amp;ldquo;yourwebsite.com/about&amp;rdquo;. Even though most domain names are not very expensive it can be a bit intimidating to buy one. However, there are alternatives!</description>
+    </item>
+    
+  </channel>
+</rss>
